@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let task of tasks">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" (change)="onTaskChanged($event, task)" [checked]="task.completed">
+      <span [ngClass]="{'name form-check-label': true, 'completed': task.completed}">{{ task.name }}</span>
+      <span class="{{ getDueDateLabel(task) }} float-right">{{ task.dueDate }}</span>
+    </div>
+  </li>
+</ul>
